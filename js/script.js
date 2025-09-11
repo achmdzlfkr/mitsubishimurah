@@ -154,3 +154,21 @@ if (searchBtn && searchInput) {
   // Render awal semua mobil
   renderCars(cars);
 }
+
+/* HEADER */
+function toggleMenu() {
+  const menu = document.getElementById("navMenu");
+  const toggle = document.querySelector(".menu-toggle");
+  menu.classList.toggle("active");
+  toggle.classList.toggle("active");
+}
+
+// Tutup menu otomatis setelah klik link
+document.querySelectorAll(".nav a").forEach(link => {
+  link.addEventListener("click", () => {
+    const menu = document.getElementById("navMenu");
+    const toggle = document.querySelector(".menu-toggle");
+    menu.classList.remove("active");
+    toggle.classList.remove("active");
+  });
+});

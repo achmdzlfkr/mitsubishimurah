@@ -34,6 +34,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .brand {
@@ -57,6 +58,11 @@ html, body {
 }
 
 /* ===== Navigasi ===== */
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
 .nav a {
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
@@ -64,7 +70,7 @@ html, body {
   color: #fff;
   text-decoration: none;
   position: relative;
-  transition: all 0.3s ease; /* transisi halus */
+  transition: all 0.3s ease;
 }
 
 /* Hover efek */
@@ -77,14 +83,112 @@ html, body {
 .nav a:active {
   background: #ef4444;
   color: #fff;
-  transform: scale(0.96); /* efek tekan */
+  transform: scale(0.96);
 }
 
-/* Jika link sedang aktif (pakai hash #id) */
+/* Jika link sedang aktif */
 .nav a.active {
   background: #ef4444;
   color: #fff;
 }
+
+/* ===== Hamburger / Navbar Terupdate ===== */
+
+/* ===== Hamburger Button ===== */
+.menu-toggle {
+  width: 40px;
+  height: 32px; /* sedikit lebih tinggi */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* jarak lebih merata */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  border-radius: 3px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Hamburger -> X */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ===== Navbar Mobile dengan Animasi Smooth ===== */
+.nav {
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: rgba(15,23,42,0.95);
+  padding: 1rem;
+  border-radius: 12px;
+  width: 220px;
+  z-index: 999;
+
+  /* Animasi awal (hidden) */
+  opacity: 0;
+  transform: translateY(-15px);
+  pointer-events: none;
+  transition: all 0.35s ease;
+}
+
+.nav a {
+  padding: 0.8rem;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Hover efek */
+.nav a:hover {
+  background: rgba(239,68,68,0.2);
+  transform: translateX(6px);
+}
+
+/* Saat aktif */
+.nav.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Desktop */
+@media(min-width:768px){
+  .menu-toggle { display: none; }
+  .nav {
+    position: static;
+    flex-direction: row;
+    background: none;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto;
+    width: auto;
+  }
+  .nav a {
+    padding: 0 1rem;
+  }
+}
+
 
 /* ===== Hero ===== */
 .hero {
@@ -176,21 +280,20 @@ html, body {
   font-weight: 700;
 }
 
-/* ===== Grid Mobil (3 Kolom Tetap) ===== */
+/* ===== Grid Mobil ===== */
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 kolom sejajar */
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  align-items: stretch; /* pastikan sama tinggi */
+  align-items: stretch;
 }
 
-/* Card */
 .card {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 16px;
   padding: 1.5rem;
   display: flex;
-  flex-direction: column; /* susun ke bawah */
+  flex-direction: column;
   justify-content: flex-start;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -200,37 +303,32 @@ html, body {
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
-/* Gambar mobil */
 .card img {
   width: 100%;
-  height: 200px;             /* tinggi fix biar sejajar */
-  object-fit: contain;       /* biar gambar tidak gepeng */
+  height: 200px;
+  object-fit: contain;
   border-radius: 12px;
   margin-bottom: 1rem;
 }
 
-/* Nama mobil */
 .card h3 {
   font-size: 1rem;
   margin-bottom: 0.5rem;
   flex-grow: 0;
 }
 
-/* Info harga */
 .card .price {
   color: #ef4444;
   font-weight: 700;
   margin: 0.5rem 0;
 }
 
-/* Footer tombol */
 .card-footer {
-  margin-top: auto; /* dorong tombol ke bawah */
+  margin-top: auto;
   display: flex;
   justify-content: flex-start;
 }
 
-/* Tombol */
 .btn-sm {
   padding: 0.5rem 1rem;
   border-radius: 8px;
@@ -249,8 +347,7 @@ html, body {
   background: #dc2626;
 }
 
-
-/* ===== Section Test Drive ===== */
+/* ===== Form Test Drive ===== */
 form select {
   appearance: none;
   -webkit-appearance: none;
@@ -264,7 +361,6 @@ form select {
   color: #fff;
   font-size: 1rem;
 
-  /* inline SVG panah putih */
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='white' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>");
   background-repeat: no-repeat;
   background-position: right 10px center;
@@ -279,13 +375,13 @@ form select option {
 
 #testdrive {
   display: flex;
-  justify-content: center; /* rata tengah */
+  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
 #testdrive .card {
-  max-width: 480px;         /* form ramping */
+  max-width: 480px;
   width: 100%;
   background: rgba(255, 255, 255, 0.06);
   border-radius: 16px;
@@ -320,7 +416,6 @@ form select option {
   background: rgba(255,255,255,0.25);
 }
 
-/* Tombol Kirim Permintaan */
 #testdrive .btn {
   width: 100%;
   padding: 0.9rem;
@@ -339,12 +434,10 @@ form select option {
   box-shadow: 0 6px 18px rgba(0,0,0,0.4);
 }
 
-
-/* Contact Layout */
-/* Layout */
+/* ===== Contact Layout ===== */
 .contact-layout {
   display: grid;
-  grid-template-columns: 280px 1fr; /* kiri profil sejajar tinggi dengan maps */
+  grid-template-columns: 280px 1fr;
   gap: 2rem;
   align-items: stretch;
 }
@@ -357,7 +450,7 @@ form select option {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%; /* sejajar dengan maps */
+  height: 100%;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
@@ -380,7 +473,6 @@ form select option {
   margin-bottom: 1.2rem;
 }
 
-/* Tombol sosial */
 .social-links {
   display: flex;
   flex-direction: column;
@@ -401,20 +493,9 @@ form select option {
   opacity: 0.9;
 }
 
-/* Warna khusus */
-.social-links a:nth-child(1) { background: #25D366; color: white; } /* WhatsApp */
-.social-links a:nth-child(2) { background: #E1306C; color: white; } /* Instagram */
-.social-links a:nth-child(3) { background: #1877F2; color: white; } /* Facebook */
-
-/* Responsive */
-@media (max-width: 768px) {
-  .contact-layout {
-    grid-template-columns: 1fr;
-  }
-  .sales-card {
-    height: auto;
-  }
-}
+.social-links a:nth-child(1) { background: #25D366; color: white; }
+.social-links a:nth-child(2) { background: #E1306C; color: white; }
+.social-links a:nth-child(3) { background: #1877F2; color: white; }
 
 /* ===== Footer ===== */
 .footer {
@@ -456,17 +537,81 @@ form select option {
 }
 
 /* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
+  .brand {
+    gap: 0.5rem;
+  }
+  .brand img {
+    height: 40px;
+  }
+  .brand h1 {
+    font-size: 1rem;
+
+  }
+  .subtitle {
+    font-size: 0.7rem;
+  }
+  /* Hero */
   .hero {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+  
+  .hero p {
+    font-size: 0.8rem;
   }
 
   .hero-right {
     margin-top: 2rem;
   }
 
-  .contact-grid {
+  /* Grid jadi 1 kolom */
+  .grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Navbar jadi dropdown */
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: rgba(15,23,42,0.95);
+    padding: 1rem;
+    border-radius: 12px;
+    width: 200px;
+    z-index: 999;
+  }
+
+  .nav a {
+    padding: 0.8rem;
+    display: block;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sales-card {
+    height: auto;
   }
 }
