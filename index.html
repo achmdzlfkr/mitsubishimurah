@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Salindo Motors — Sales & Marketing Mobil</title>
+  <link rel="icon" href="assets/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="container header">
+      <div class="brand">
+        <img src="assets/3berlian.png" alt="logo">
+        <div>
+          <h1>Mitsubishi Murah Jakarta</h1>
+          <div class="subtitle">Sales Executive Salindo Berlian Motor</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="ghost" href="#inventory">Katalog Mobil</a>
+        <a class="ghost" href="#testdrive">Test Drive</a>
+        <a class="ghost" href="#contact">Hubungi Kami</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero container" id="home">
+    <div class="hero-left">
+      <h2>Temukan mobil impianmu — cepat & terpercaya</h2>
+      <p>Browse katalog lengkap, bandingkan varian, dan booking test drive. Kami bantu proses kredit hingga BPKB.</p>
+      <div class="searchbar" role="search">
+        <input id="q" type="search" placeholder="Cari merk, model, atau harga (mis. 'Mitsubishi XForce')">
+        <button class="btn" id="searchBtn">Cari</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="car-preview">
+          <img src="assets/destinator-home.jpg" alt="car">
+        </div>
+        <div class="car-info">
+          <div>
+            <div class="car-name">New Mitsubishi Destinator Ultimate</div>
+            <div class="car-stock">Ready stock</div>
+          </div>
+          <div class="car-price">Mulai dari 465.000.000</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVENTORY -->
+  <section id="inventory" class="section container">
+    <div class="section-header">
+      <h3>Katalog Mobil</h3>
+    </div>
+    <div class="grid" id="carGrid">
+      <!-- JS inject data mobil -->
+    </div>
+  </section>
+
+  <!-- TEST DRIVE -->
+  <section id="testdrive" class="section container">
+    <div class="section-header">
+      <h3>Booking Test Drive</h3>
+    </div>
+    <form class="card">
+      <label>Nama Lengkap</label>
+      <input type="text" placeholder="Masukkan nama anda" required>
+      <label>No. Telepon</label>
+      <input type="tel" placeholder="0812xxxx" required>
+      <label>Pilih Mobil</label>
+      <select>
+        <option>Mitsubishi Destinator</option>
+        <option>Mitsubishi Xforce</option>
+        <option>Mitsubishi Xpander</option>
+        <option>Mitsubishi Pajero Sport</option>
+      </select>
+      <label>Tanggal</label>
+      <input type="date" required>
+      <button class="btn" type="submit">Kirim Permintaan</button>
+    </form>
+  </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section container">
+    <div class="section-header">
+        <h3>Hubungi Kami</h3>
+    </div>
+
+    <div class="contact-layout">
+        <!-- Profil Sales -->
+        <div class="sales-card">
+        <img src="assets/sales.jpg" alt="Sales Executive">
+        <h4>Achmad Zulfikar</h4>
+        <p class="role">Sales Executive</p>
+
+        <!-- Tombol Sosial -->
+        <div class="social-links">
+            <a href="https://wa.me/6281234567890?text=Halo, saya ingin informasi mengenai mobil Mitsubishi."
+            target="_blank" class="btn-sm btn">💬 WhatsApp</a>
+            <a href="https://instagram.com/salindomotors" target="_blank" class="btn-sm btn">📷 Instagram</a>
+            <a href="https://facebook.com/salindomotors" target="_blank" class="btn-sm btn">👍 Facebook</a>
+        </div>
+        </div>
+
+        <!-- Info + Maps -->
+        <div class="contact-info">
+        <div class="office-info">
+            <h4>PT Salindo Berlian Motor</h4>
+            <p>📍 Jl. Daan Mogot KM 12,8 No. 9 Cengkareng Timur, Jakarta Barat</p>
+            <p>📞 (021) 5452455/57</p>
+            <p>📧 sales@salindomotors.com</p>
+        </div>
+
+        <!-- Google Maps -->
+        <div class="maps-container">
+            <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.8214423112045!2d106.73973287498984!3d-6.154663793832461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7291b73baa5%3A0x14b1f85e122abc24!2sPT.%20Salindo%20Berlian%20Motor!5e0!3m2!1sid!2sid!4v1757581143026!5m2!1sid!2sid" 
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+        </div>
+    </div>
+    </section>
+
+
+
+  <!-- FOOTER -->
+    <footer class="footer">
+    <div class="container">
+        <p> Template by
+        <a href="https://wa.me/6281234567890" target="_blank" class="footer-link">
+            Aizen
+        </a> — © 2025 Mitsubishi Murah Jakarta.
+        </p>
+    </div>
+    </footer>
+
+
+  <!-- Floating WhatsApp -->
+  <a class="whatsapp" href="https://wa.me/6281234567890" target="_blank">💬 Chat Sales</a>
+
+  <!-- Script -->
+  <script src="js/script.js"></script>
+</body>
+</html>
+    
