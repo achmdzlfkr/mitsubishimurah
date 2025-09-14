@@ -591,6 +591,9 @@ form select option {
 
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 1rem; /* spasi standar */
+  }
   /* Header */
   .header {
     display: flex;
