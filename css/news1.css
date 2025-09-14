@@ -34,20 +34,23 @@
   margin-bottom: 1rem;
 }
 
+/* Tombol Kembali */
 .back-btn {
   display: inline-block;
-  padding: 0.8rem 1.2rem;
-  border-radius: 8px;
-  background: #ef4444;
-  color: #fff;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;   /* jarak aman dari footer */
+  padding: 0.5rem 1rem;  /* lebih kecil */
+  font-size: 0.85rem;
+  border-radius: 6px;
+  background: #ffb700;
+  color: #2c2c2c;
   text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s ease;
+  transition: background 0.3s;
+}
+.back-btn:hover {
+  background: #e6a500;
 }
 
-.back-btn:hover {
-  background: #dc2626;
-}
 
 /* ===== Styling untuk tabel di halaman news ===== */
 .news-table {
@@ -96,3 +99,51 @@
 .menu-toggle.active .burger { display: none; }
 .menu-toggle.active .close { display: block; }
 .menu-toggle .burger { display: block; }
+
+
+/* Tambahan styling khusus mobile */
+@media (max-width: 768px) {
+  /* Semua container rapih kiri-kanan */
+  .container {
+    padding: 0 1rem; /* spasi standar */
+  }
+
+  /* Supaya gambar berita tidak mentok */
+  .news-detail img.news-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  /* Judul & teks lebih nyaman dibaca */
+  .news-title {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+  .news-meta {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    color: #777;
+  }
+  .news-body p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Tombol back */
+  .back-btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  /* Footer rapih */
+  .footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
