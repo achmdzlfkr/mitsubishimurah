@@ -1,0 +1,98 @@
+/* ===== Style Khusus Halaman Detail Berita ===== */
+
+.news-detail {
+  padding: 3rem 0;
+}
+
+.news-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.news-meta {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+}
+
+.news-image {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.news-body {
+  font-size: 1rem;
+  color: #e2e8f0;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.news-body p {
+  margin-bottom: 1rem;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  background: #ef4444;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #dc2626;
+}
+
+/* ===== Styling untuk tabel di halaman news ===== */
+.news-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.95rem;
+  background: #1e293b; /* selaras dengan tema gelap */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.news-table th,
+.news-table td {
+  padding: 12px 16px;
+  text-align: center;
+  border-bottom: 1px solid #2d3748;
+}
+
+.news-table th {
+  background: #ffb700;
+  color: #000;
+  font-weight: 600;
+}
+
+.news-table tr:nth-child(even) {
+  background: #2c3e50;
+}
+
+.news-table tr:hover {
+  background: #374151;
+  transition: 0.2s;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icon {
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+.menu-toggle.active .burger { display: none; }
+.menu-toggle.active .close { display: block; }
+.menu-toggle .burger { display: block; }

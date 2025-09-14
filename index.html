@@ -3,10 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Salindo Motors — Sales & Marketing Mobil</title>
-  <link rel="icon" href="assets/favicon.png" />
+  <title>Mitsubishi Murah Jakarta</title>
+  <link rel="icon" href="assets/3berlian.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
   <!-- HEADER -->
@@ -21,13 +23,24 @@
       </div>
 
       <button class="menu-toggle" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
+        <!-- Burger -->
+        <svg class="icon burger" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+        <!-- Close -->
+        <svg class="icon close" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
       </button>
+
       <!-- Navigasi -->
       <nav class="nav" id="navMenu">
-        <a class="ghost" href="#inventory">Katalog Mobil</a>
+        <a class="ghost" href="index.html">Home</a>
+        <a class="ghost" href="#news">Berita</a>
+        <a class="ghost" href="#inventory">Mobil</a>
         <a class="ghost" href="#testdrive">Test Drive</a>
         <a class="ghost" href="#contact">Hubungi Kami</a>
       </nav>
@@ -61,6 +74,45 @@
     </div>
   </section>
 
+    <!-- NEWS -->
+  <section id="news" class="section container">
+    <div class="section-header">
+      <h3>Berita Terbaru Mitsubishi</h3>
+      <p>Update informasi terbaru seputar produk & promo Mitsubishi.</p>
+    </div>
+
+    <div class="news-grid">
+      <!-- Card Berita -->
+      <article class="news-card">
+        <img src="assets/berita1.jpg" alt="Fitur Destinator">
+        <div class="news-content">
+          <h4>Berkendara Saat Roadtrip Lebih Percaya Diri dengan Fitur Keselamatan Mitsubishi Destinator</h4>
+          <p>Dengan Mitsubishi Destinator, rasa percaya diri tersebut dapat dinikmati sepenuhnya berkat serangkaian fitur keselamatan canggih Diamond Sense yang terintegrasi di dalamnya. </p>
+          <a href="news1.html" class="btn-sm btn">Baca Selengkapnya</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <img src="assets/berita2.jpg" alt="Promo September">
+        <div class="news-content">
+          <h4>6 Alasan Mengapa Banyak Keluarga Upgrade ke Mobil SUV</h4>
+          <p>Sudah bertahun-tahun lamanya, jenis mobil Multi Purpose Vehicle (MPV) menjadi pilihan utama keluarga karena memiliki jumlah seater yang lebih banyak dan kabin nyaman.</p>
+          <a href="news2.html" class="btn-sm btn">Baca Selengkapnya</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <img src="assets/berita3.jpg" alt="Test Drive Event">
+        <div class="news-content">
+          <h4>Lihat Simulasi Kredit & Cicilan Mobil Mitsubishi Destinator</h4>
+          <p>PT Mitsubishi Motors Krama Yudha Sales Indonesia (MMKSI) kembali menggebrak pasar otomotif dengan meluncurkan Premium Family SUV 7-seater bernama Destinator.</p>
+          <a href="news3.html" class="btn-sm btn">Baca Selengkapnya</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+
   <!-- INVENTORY -->
   <section id="inventory" class="section container">
     <div class="section-header">
@@ -76,85 +128,85 @@
     <div class="section-header">
       <h3>Booking Test Drive</h3>
     </div>
-    <form class="card">
+    <form class="card" id="testDriveForm">
       <label>Nama Lengkap</label>
-      <input type="text" placeholder="Masukkan nama anda" required>
+      <input type="text" id="nama" placeholder="Masukkan nama anda" required>
+
       <label>No. Telepon</label>
-      <input type="tel" placeholder="0812xxxx" required>
+      <input type="tel" id="telp" placeholder="0812xxxx" required>
+
       <label>Pilih Mobil</label>
-      <select>
+      <select id="mobil">
         <option>Mitsubishi Destinator</option>
         <option>Mitsubishi Xforce</option>
         <option>Mitsubishi Xpander</option>
         <option>Mitsubishi Pajero Sport</option>
       </select>
+
       <label>Tanggal</label>
-      <input type="date" required>
+      <input type="date" id="tanggal" required>
+
       <button class="btn" type="submit">Kirim Permintaan</button>
     </form>
   </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section container">
+  <section id="contact" class="section container">
     <div class="section-header">
-        <h3>Hubungi Kami</h3>
+      <h3>Hubungi Kami</h3>
     </div>
 
     <div class="contact-layout">
-        <!-- Profil Sales -->
-        <div class="sales-card">
+      <!-- Profil Sales -->
+      <div class="sales-card">
         <img src="assets/sales.jpg" alt="Sales Executive">
         <h4>Achmad Zulfikar</h4>
         <p class="role">Sales Executive</p>
 
         <!-- Tombol Sosial -->
         <div class="social-links">
-            <a href="https://wa.me/6281234567890?text=Halo, saya ingin informasi mengenai mobil Mitsubishi."
-            target="_blank" class="btn-sm btn">💬 WhatsApp</a>
-            <a href="https://instagram.com/salindomotors" target="_blank" class="btn-sm btn">📷 Instagram</a>
-            <a href="https://facebook.com/salindomotors" target="_blank" class="btn-sm btn">👍 Facebook</a>
+          <a href="https://wa.me/6281234567890?text=Halo, saya ingin informasi mengenai mobil Mitsubishi."
+             target="_blank" class="btn-sm btn"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+          <a href="https://instagram.com/salindomotors" target="_blank" class="btn-sm btn"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          <a href="https://facebook.com/salindomotors" target="_blank" class="btn-sm btn"><i class="fa-brands fa-facebook"></i> Facebook</a>
         </div>
-        </div>
+      </div>
 
-        <!-- Info + Maps -->
-        <div class="contact-info">
+      <!-- Info + Maps -->
+      <div class="contact-info">
         <div class="office-info">
-            <h4>PT Salindo Berlian Motor</h4>
-            <p>📍 Jl. Daan Mogot KM 12,8 No. 9 Cengkareng Timur, Jakarta Barat</p>
-            <p>📞 (021) 5452455/57</p>
-            <p>📧 sales@salindomotors.com</p>
+          <h4>PT Salindo Berlian Motor</h4>
+          <p><i class="fa-solid fa-location-dot"></i> Jl. Daan Mogot KM 12,8 No. 9 Cengkareng Timur, Jakarta Barat</p>
+          <p><i class="fa-solid fa-phone"></i> (021) 5452455/57</p>
+          <p><i class="fa-solid fa-envelope"></i> sales@salindomotors.com</p>
         </div>
 
         <!-- Google Maps -->
         <div class="maps-container">
-            <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.8214423112045!2d106.73973287498984!3d-6.154663793832461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7291b73baa5%3A0x14b1f85e122abc24!2sPT.%20Salindo%20Berlian%20Motor!5e0!3m2!1sid!2sid!4v1757581143026!5m2!1sid!2sid" 
-            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
-            </iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.8214423112045!2d106.73973287498984!3d-6.154663793832461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7291b73baa5%3A0x14b1f85e122abc24!2sPT.%20Salindo%20Berlian%20Motor!5e0!3m2!1sid!2sid!4v1757832180245!5m2!1sid!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
-        </div>
+      </div>
     </div>
-    </section>
+  </section>
 
 
 
   <!-- FOOTER -->
-    <footer class="footer">
+  <footer class="footer">
     <div class="container">
-        <p> Template by
+      <p>Template by
         <a href="https://wa.me/6281234567890" target="_blank" class="footer-link">
-            Aizen
+          Aizen
         </a> — © 2025 Mitsubishi Murah Jakarta.
-        </p>
+      </p>
     </div>
-    </footer>
-
+  </footer>
 
   <!-- Floating WhatsApp -->
-  <a class="whatsapp" href="https://wa.me/6281234567890" target="_blank">💬 Chat Sales</a>
+  <a class="whatsapp" href="https://wa.me/6281234567890" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i> Chat Sales
+  </a>
 
   <!-- Script -->
   <script src="js/script.js"></script>
 </body>
 </html>
-    

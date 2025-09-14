@@ -21,13 +21,13 @@ const cars = [
   {
     name: "Mitsubishi Xpander Cross",
     price: "Mulai dari 364.200.000",
-    img: "assets/cross-white.jpg",
+    img: "assets/cross-white.png",
     stock: "Ready Stock",
   },
   {
     name: "Mitsubishi New Xpander",
     price: "Mulai dari 332.500.000",
-    img: "assets/xpander-blade-silver.webp",
+    img: "assets/xpander-blade-silver.png",
     stock: "Ready Stock",
   },
   {
@@ -157,9 +157,9 @@ if (searchBtn && searchInput) {
 
 /* HEADER */
 function toggleMenu() {
-  const menu = document.getElementById("navMenu");
+  const nav = document.getElementById("navMenu");
   const toggle = document.querySelector(".menu-toggle");
-  menu.classList.toggle("active");
+  nav.classList.toggle("active");
   toggle.classList.toggle("active");
 }
 
@@ -171,4 +171,26 @@ document.querySelectorAll(".nav a").forEach(link => {
     menu.classList.remove("active");
     toggle.classList.remove("active");
   });
+});
+
+
+/* TEST DRIVE */
+document.getElementById("testDriveForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let nama = document.getElementById("nama").value;
+  let telp = document.getElementById("telp").value;
+  let mobil = document.getElementById("mobil").value;
+  let tanggal = document.getElementById("tanggal").value;
+
+  let pesan = `Halo, saya ingin booking Test Drive:%0A
+Nama: ${nama}%0A
+Telepon: ${telp}%0A
+Mobil: ${mobil}%0A
+Tanggal: ${tanggal}`;
+
+  // Ganti nomor WA sales Anda (pakai format internasional tanpa +)
+  let nomor = "628123456789";
+
+  window.open(`https://wa.me/${nomor}?text=${pesan}`, "_blank");
 });
