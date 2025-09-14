@@ -591,23 +591,16 @@ form select option {
 
 
 @media (max-width: 768px) {
-  /* ... kode kamu sebelumnya ... */
-
-  /* Tambahin padding standar ke container section */
-  .section.container {
-    padding-left: 1rem;  /* 16px */
-    padding-right: 1rem; /* 16px */
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem; /* spasi kiri kanan */
   }
-
-  /* Kalau ada grid / card yang mepet */
-  .card, .news-card, .sales-card {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-
-  /* Brand */
   .brand {
+    display: flex;
+    align-items: center;
     gap: 0.5rem;
   }
   .brand img {
@@ -619,12 +612,15 @@ form select option {
   .subtitle {
     font-size: 0.7rem;
   }
+  .menu-toggle {
+    margin-left: auto;
+  }
 
   /* Hero Section */
   .hero {
     grid-template-columns: 1fr;
     text-align: center;
-    padding: 2rem 0;
+    padding: 2rem 1rem; /* spasi kiri kanan */
   }
   .hero h2 {
     font-size: 1.4rem;
@@ -635,10 +631,14 @@ form select option {
   .hero-right {
     margin-top: 1.5rem;
   }
+
+  /* Searchbar */
   .searchbar {
     flex-direction: column;
+    gap: 0.5rem;
   }
-  .searchbar input, .searchbar .btn {
+  .searchbar input,
+  .searchbar .btn {
     width: 100%;
   }
 
@@ -646,6 +646,7 @@ form select option {
   .grid {
     grid-template-columns: 1fr;
     gap: 1rem;
+    padding: 0 1rem; /* spasi kiri kanan */
   }
   .card img {
     height: 160px;
@@ -655,6 +656,7 @@ form select option {
   .news-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
+    padding: 0 1rem; /* spasi kiri kanan */
   }
   .news-card img {
     height: 150px;
@@ -667,14 +669,18 @@ form select option {
   }
 
   /* Test Drive */
+  #testdrive {
+    padding: 0 1rem; /* spasi kiri kanan */
+  }
   #testdrive .card {
     padding: 1.5rem;
   }
 
-  /* Contact Section */
+  /* Contact Section (Hubungi Kami) */
   .contact-layout {
     grid-template-columns: 1fr;
     gap: 1rem;
+    padding: 0 1rem; /* spasi kiri kanan */
   }
   .sales-card {
     height: auto;
@@ -689,7 +695,19 @@ form select option {
   .section {
     padding: 2rem 0;
   }
+  .section-header {
+    padding: 0 1rem; /* spasi kiri kanan */
+  }
   .section-header h3 {
     font-size: 1.2rem;
+  }
+
+  /* Footer */
+  footer {
+    padding: 1.5rem 1rem; /* spasi kiri kanan */
+    text-align: center;
+  }
+  footer p {
+    font-size: 0.8rem;
   }
 }
