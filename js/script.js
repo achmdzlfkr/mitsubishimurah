@@ -2,57 +2,57 @@
 const cars = [
   {
     name: "Mitsubishi Destinator Ultimate",
-    price: "Mulai dari 465.000.000",
+    price: "Mulai dari 385.000.000",
     img: "assets/destinator-blue.webp",
-    stock: "Ready Stock",
+    stock: "Ultimate Premium | Ultimate | Exceed | GLS",
   },
   {
     name: "Mitsubishi Xforce Ultimate",
-    price: "Mulai dari 421.300.000",
+    price: "Mulai dari 388.00.000",
     img: "assets/xforce-white-pearl.png",
-    stock: "Ready Stock",
+    stock: "Ultimate w/Diamond Sense | Ultimate | Exceed",
   },
   {
     name: "Mitsubishi Pajero Sport",
-    price: "Mulai dari 607.150.000",
+    price: "Mulai dari 577.700.000",
     img: "assets/pajero-putih.webp",
-    stock: "Ready Stock",
+    stock: "Ultimate | Dakar | Exceed | GLX",
   },
   {
     name: "Mitsubishi Xpander Cross",
-    price: "Mulai dari 364.200.000",
+    price: "Mulai dari 338.000.000",
     img: "assets/cross-white.png",
-    stock: "Ready Stock",
+    stock: "Premium CVT | MT",
   },
   {
     name: "Mitsubishi New Xpander",
-    price: "Mulai dari 332.500.000",
+    price: "Mulai dari 270.100.000",
     img: "assets/xpander-blade-silver.png",
-    stock: "Ready Stock",
+    stock: "Ultimate | Exceed | GLS",
   },
   {
     name: "Mitsubishi Triton",
     price: "Mulai dari 310.200.000",
     img: "assets/triton-graphite-grey.webp",
-    stock: "Ready Stock",
+    stock: "Ultimate | Exceed | GLS",
   },
   {
     name: "Mitsubishi Colt L300",
     price: "Mulai dari 246.200.000",
     img: "assets/l300-hitam.webp",
-    stock: "Ready Stock",
+    stock: "Flat Deck | Cab Chassis",
   },
   {
     name: "Mitsubishi Fuso Canter",
     price: "Mulai dari 426.500.000",
     img: "assets/canter-fe73.webp",
-    stock: "Ready Stock",
+    stock: "Economical | Power | Speed | Capacity",
   },
   {
     name: "Mitsubishi Fuso Figther",
     price: "Mulai dari 923.300.000",
     img: "assets/fuso-figther.png",
-    stock: "Ready Stock",
+    stock: "4x2 | 6x2 | 6x4",
   }
 ];
 
@@ -68,8 +68,8 @@ if (grid) {
       <div class="meta">${car.stock}</div>
       <div class="price">${car.price}</div>
       <div class="card-footer">
-        <a class="btn-sm btn" href="https://wa.me/6281234567890?text=Halo, saya tertarik dengan ${car.name}" target="_blank">
-          💬 Tanya Stock
+        <a class="btn-sm btn" href="https://wa.me/6281112012936?text=Halo, saya tertarik dengan ${car.name}" target="_blank">
+          Tanya Stock
         </a>
       </div>
     `;
@@ -94,9 +94,9 @@ if (searchBtn && searchInput) {
         <div class="price">${car.price}</div>
         <div class="card-footer">
           <a class="btn-sm btn" 
-             href="https://wa.me/6281234567890?text=Halo, saya tertarik dengan ${car.name}" 
+             href="https://wa.me/6281112012936?text=Halo, saya tertarik dengan ${car.name}" 
              target="_blank">
-            💬 Chat Sales
+            Tanya Stock
           </a>
         </div>
       `;
@@ -190,7 +190,43 @@ Mobil: ${mobil}%0A
 Tanggal: ${tanggal}`;
 
   // Ganti nomor WA sales Anda (pakai format internasional tanpa +)
-  let nomor = "628123456789";
+  let nomor = "6281112012936";
 
   window.open(`https://wa.me/${nomor}?text=${pesan}`, "_blank");
 });
+
+
+let currentSlide = 0;
+const track = document.getElementById("galleryTrack");
+const items = document.querySelectorAll(".gallery-item");
+const totalItems = items.length;
+
+function moveSlide(step) {
+  currentSlide += step;
+
+  if (currentSlide < 0) {
+    currentSlide = totalItems - 1;
+  } else if (currentSlide >= totalItems) {
+    currentSlide = 0;
+  }
+
+  const offset = -currentSlide * (items[0].offsetWidth + 20); 
+  track.style.transform = `translateX(${offset}px)`;
+}
+
+
+
+let promoIndex = 0;
+const promoTrack = document.getElementById('promoTrack');
+const promoItems = document.querySelectorAll('.promo-item');
+
+function movePromo(step) {
+  promoIndex += step;
+  if (promoIndex >= promoItems.length) promoIndex = 0;
+  if (promoIndex < 0) promoIndex = promoItems.length - 1;
+  const offset = -promoIndex * 100; // geser sesuai index
+  promoTrack.style.transform = `translateX(${offset}%)`;
+}
+
+// Optional: auto slide setiap 5 detik
+setInterval(() => movePromo(1), 5000);

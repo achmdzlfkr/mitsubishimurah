@@ -24,22 +24,27 @@
 
       <button class="menu-toggle" onclick="toggleMenu()">
         <!-- Burger -->
-        <svg class="icon burger" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="icon burger" xmlns="http://www.w3.org/2000/svg" width="30" height="30" 
+            viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="3" y1="6" x2="21" y2="6"/>
           <line x1="3" y1="12" x2="21" y2="12"/>
           <line x1="3" y1="18" x2="21" y2="18"/>
         </svg>
+
         <!-- Close -->
-        <svg class="icon close" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="icon close" xmlns="http://www.w3.org/2000/svg" width="30" height="30" 
+            viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="18" y1="6" x2="6" y2="18"/>
           <line x1="6" y1="6" x2="18" y2="18"/>
         </svg>
       </button>
 
+
       <!-- Navigasi -->
       <nav class="nav" id="navMenu">
         <a class="ghost" href="index.html">Home</a>
         <a class="ghost" href="#news">Berita</a>
+        <a class="ghost" href="#gallery">Galeri</a>
         <a class="ghost" href="#inventory">Mobil</a>
         <a class="ghost" href="#testdrive">Test Drive</a>
         <a class="ghost" href="#contact">Hubungi Kami</a>
@@ -58,23 +63,29 @@
         <button class="btn" id="searchBtn">Cari</button>
       </div>
     </div>
+
     <div class="hero-right">
-      <div class="hero-card">
-        <div class="car-preview">
-          <img src="assets/destinator-home.jpg" alt="car">
-        </div>
-        <div class="car-info">
-          <div>
-            <div class="car-name">New Mitsubishi Destinator Ultimate</div>
-            <div class="car-stock">Ready stock</div>
+      <div class="promo-slider">
+        <button class="promo-btn prev" onclick="movePromo(-1)">&#10094;</button>
+        <div class="promo-track" id="promoTrack">
+          <!-- Slide 1 -->
+          <div class="promo-item">
+            <img src="assets/promo-1.webp" alt="Promo 1">
+            <p class="promo-desc">GAS - Gebyar Auto Show bersama Mitsubishi Destinator</p>
           </div>
-          <div class="car-price">Mulai dari 465.000.000</div>
+          <!-- Slide 2 -->
+          <div class="promo-item">
+            <img src="assets/promo-2.webp" alt="Promo 2">
+            <p class="promo-desc">Dapatkan Tiket Wisata Internasional bersama Sahabat Fuso</p>
+          </div>
         </div>
+        <button class="promo-btn next" onclick="movePromo(1)">&#10095;</button>
       </div>
     </div>
   </section>
 
-    <!-- NEWS -->
+
+  <!-- NEWS -->
   <section id="news" class="section container">
     <div class="section-header">
       <h3>Berita Terbaru Mitsubishi</h3>
@@ -86,9 +97,9 @@
       <article class="news-card">
         <img src="assets/berita1.jpg" alt="Fitur Destinator">
         <div class="news-content">
-          <h4>Berkendara Saat Roadtrip Lebih Percaya Diri dengan Fitur Keselamatan Mitsubishi Destinator</h4>
-          <p>Dengan Mitsubishi Destinator, rasa percaya diri tersebut dapat dinikmati sepenuhnya berkat serangkaian fitur keselamatan canggih Diamond Sense yang terintegrasi di dalamnya. </p>
-          <a href="news1.html" class="btn-sm btn">Baca Selengkapnya</a>
+          <h4>Program Penjualan September 2025 & Peduli Banjir Bali</h4>
+          <p> PT Mitsubishi Motors Krama Yudha Sales Indonesia (MMKSI) tak hanya memberikan program penjualan menarik.. </p>
+          <a href="news-detail.html?id=1" class="btn-sm btn">Baca Selengkapnya</a>
         </div>
       </article>
 
@@ -96,8 +107,8 @@
         <img src="assets/berita2.jpg" alt="Promo September">
         <div class="news-content">
           <h4>6 Alasan Mengapa Banyak Keluarga Upgrade ke Mobil SUV</h4>
-          <p>Sudah bertahun-tahun lamanya, jenis mobil Multi Purpose Vehicle (MPV) menjadi pilihan utama keluarga karena memiliki jumlah seater yang lebih banyak dan kabin nyaman.</p>
-          <a href="news2.html" class="btn-sm btn">Baca Selengkapnya</a>
+          <p>Bagi banyak keluarga muda, eksterior ini memiliki daya tarik tersendiri karena mobil bukan hanya sarana transportasi, tetapi juga bagian dari gaya hidup.</p>
+          <a href="news-detail.html?id=2" class="btn-sm btn">Baca Selengkapnya</a>
         </div>
       </article>
 
@@ -106,11 +117,47 @@
         <div class="news-content">
           <h4>Lihat Simulasi Kredit & Cicilan Mobil Mitsubishi Destinator</h4>
           <p>PT Mitsubishi Motors Krama Yudha Sales Indonesia (MMKSI) kembali menggebrak pasar otomotif dengan meluncurkan Premium Family SUV 7-seater bernama Destinator.</p>
-          <a href="news3.html" class="btn-sm btn">Baca Selengkapnya</a>
+          <a href="news-detail.html?id=3" class="btn-sm btn">Baca Selengkapnya</a>
         </div>
       </article>
     </div>
   </section>
+
+
+  
+    <!-- GALLERY -->
+  <section id="gallery" class="section container">
+    <div class="section-header">
+      <h3>Galeri Konsumen & Testimoni</h3>
+      <p>Momen spesial bersama konsumen Mitsubishi.</p>
+    </div>
+
+    <div class="gallery-slider">
+      <button class="gallery-btn prev" id="btnPrev" onclick="moveSlide(-1)">&#10094;</button>
+
+      <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-item">
+          <img src="assets/pkt/pkt-1.jpg" alt="Penyerahan Mobil 1">
+          <p class="caption">Mitsubishi Family</p>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/pkt/pkt-2.jpg" alt="Penyerahan Mobil 2">
+          <p class="caption">Mitsubishi Family</p>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/pkt/pkt-3.jpg" alt="Penyerahan Mobil 3">
+          <p class="caption">Mitsubishi Family</p>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/pkt/pkt-4.jpg" alt="Penyerahan Mobil 4">
+          <p class="caption">Mitsubishi Family</p>
+        </div>
+      </div>
+
+      <button class="gallery-btn next" id="btnNext" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+  </section>
+
 
 
   <!-- INVENTORY -->
@@ -165,9 +212,10 @@
         <!-- Tombol Sosial -->
         <div class="social-links">
           <a href="https://wa.me/6281234567890?text=Halo, saya ingin informasi mengenai mobil Mitsubishi."
-             target="_blank" class="btn-sm btn"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-          <a href="https://instagram.com/salindomotors" target="_blank" class="btn-sm btn"><i class="fa-brands fa-instagram"></i> Instagram</a>
-          <a href="https://facebook.com/salindomotors" target="_blank" class="btn-sm btn"><i class="fa-brands fa-facebook"></i> Facebook</a>
+             target="_blank" class="btn-sm btn"><i class="fa-brands fa-whatsapp"></i> WhatsApp Rinaldi</a>
+          <a href="https://wa.me/6281234567890?text=Halo, saya ingin informasi mengenai mobil Mitsubishi."
+             target="_blank" class="btn-sm btn"><i class="fa-brands fa-whatsapp"></i> WhatsApp Admin</a>
+          <a href="https://instagram.com/rinaldi_salindo" target="_blank" class="btn-sm btn"><i class="fa-brands fa-instagram"></i> Instagram</a>
         </div>
       </div>
 
@@ -194,7 +242,7 @@
   <footer class="footer">
     <div class="container">
       <p>Template by
-        <a href="https://wa.me/6281234567890" target="_blank" class="footer-link">
+        <a href="https://wa.me/6281112012936" target="_blank" class="footer-link">
           Aizen
         </a> — © 2025 Mitsubishi Murah Jakarta.
       </p>
@@ -202,8 +250,8 @@
   </footer>
 
   <!-- Floating WhatsApp -->
-  <a class="whatsapp" href="https://wa.me/6281234567890" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i> Chat Sales
+  <a class="whatsapp" href="https://wa.me/6281112012936?text=Halo, saya butuh bantuan" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i> <span class="wa-text">Chat Sales</span>
   </a>
 
   <!-- Script -->

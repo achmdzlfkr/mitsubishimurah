@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Berita Mitsubishi - Detail</title>
+  <link rel="icon" href="assets/3berlian.png" />
+  <!-- Global style -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Style khusus halaman news -->
+  <link rel="stylesheet" href="css/news1.css">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="topbar">
+    <div class="container header">
+      <div class="brand">
+        <img src="assets/3berlian.png" alt="logo">
+        <div>
+          <h1>Mitsubishi Murah Jakarta</h1>
+          <div class="subtitle">Sales Executive Salindo Berlian Motor</div>
+        </div>
+      </div>
+
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <!-- Burger -->
+        <svg class="icon burger" xmlns="http://www.w3.org/2000/svg" width="30" height="30" 
+             viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" 
+             stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+        <!-- Close -->
+        <svg class="icon close" xmlns="http://www.w3.org/2000/svg" width="30" height="30" 
+             viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" 
+             stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <nav class="nav">
+        <a class="ghost" href="index.html">Home</a>
+        <a class="ghost" href="index.html#news">Berita</a>
+        <a class="ghost" href="index.html#gallery">Galeri</a>
+        <a class="ghost" href="index.html#inventory">Mobil</a>
+        <a class="ghost" href="index.html#testdrive">Test Drive</a>
+        <a class="ghost" href="index.html#contact">Hubungi Kami</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- News Detail -->
+  <section class="news-detail container">
+    <h2 class="news-title"></h2>
+    <p class="news-meta"></p>
+    <img src="" alt="" class="news-image">
+    <div class="news-body"></div>
+
+    <!-- Tombol Navigasi -->
+    <div class="news-nav">
+      <a href="index.html#news" class="btn back-btn"><i class="fa fa-arrow-left"></i> Kembali</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>Template by
+        <a href="https://wa.me/6281234567890" target="_blank" class="footer-link">
+          Aizen
+        </a> — © 2025 Mitsubishi Murah Jakarta.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a class="whatsapp" href="https://wa.me/6281112012936?text=Halo, saya butuh bantuan" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i> <span class="wa-text">Chat Sales</span>
+  </a>
+
+  <script src="js/news.js"></script>
+</body>
+</html>
