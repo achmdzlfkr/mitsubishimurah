@@ -230,3 +230,12 @@ function movePromo(step) {
 
 // Optional: auto slide setiap 5 detik
 setInterval(() => movePromo(1), 5000);
+
+
+
+
+/* TANGGAL TEST DRIVE */
+flatpickr("#tanggal", {
+  dateFormat: "d-m-Y",   // format dd-mm-yyyy
+  allowInput: true       // biar bisa ketik manual juga
+});
